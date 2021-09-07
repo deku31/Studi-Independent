@@ -12,7 +12,7 @@ public class BallControl : MonoBehaviour
     // Besarnya gaya awal yang diberikan untuk mendorong bola
     public float xInitialForce;
     public float yInitialForce;
-
+    public float speed;
     void ResetBall()
     {
         // Reset posisi menjadi (0,0)
@@ -33,25 +33,15 @@ public class BallControl : MonoBehaviour
         if (randomDirection < 1.0f)
         {
             // Gunakan gaya untuk menggerakkan bola ini.
-            rigidBody2D.AddForce(new Vector2(xInitialForce, -yInitialForce));
+            rigidBody2D.AddForce(new Vector2(xInitialForce, -yInitialForce)*speed);
         }
         else
         {
-            rigidBody2D.AddForce(new Vector2(-xInitialForce, -yInitialForce));
+            rigidBody2D.AddForce(new Vector2(-xInitialForce, -yInitialForce)*speed);
         }
 
     }
-    //private void OnCollisionEnter2D(Collision2D coll)
-    //{
-    //    if (coll.collider.CompareTag("Player"))
-    //    {
-    //        Vector2 vel;
-    //        vel.x = rigidBody2D.velocity.x;
-    //        vel.y = (rigidBody2D.velocity.y / 2.0f) + (coll.collider.attachedRigidbody.velocity.y / 3.0f);
-    //        rigidBody2D.velocity = vel;
-    //    }
-    //}
-    void RestartGame()
+   void RestartGame()
     {
         // Kembalikan bola ke posisi semula
         ResetBall();

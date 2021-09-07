@@ -409,8 +409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db250c2cbfbec940a68fc446d6b8a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xInitialForce: 200
-  yInitialForce: 150
+  xInitialForce: 50
+  yInitialForce: 15
+  speed: 9
 --- !u!1001 &887194713
 PrefabInstance:
   m_ObjectHideFlags: 0
