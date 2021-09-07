@@ -1,6 +1,6 @@
 # Studi-Independent
- *Nama : Deri Kurniawan
+ Nama : Deri Kurniawan
  
- *Nim : 8020190351
+ Nim : 8020190351
  
- *Universitas : Universitas Dinamika Bangsa
+ Universitas : Universitas Dinamika Bangsa
