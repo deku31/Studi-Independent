@@ -33,15 +33,22 @@ public class BallControl : MonoBehaviour
         if (randomDirection < 1.0f)
         {
             // Gunakan gaya untuk menggerakkan bola ini.
-            rigidBody2D.AddForce(new Vector2(xInitialForce, -yInitialForce)*speed);
+            rigidBody2D.AddForce(new Vector2(xInitialForce, yRandomInitialForce)*speed);
         }
         else
         {
-            rigidBody2D.AddForce(new Vector2(-xInitialForce, -yInitialForce)*speed);
+            rigidBody2D.AddForce(new Vector2(-xInitialForce, yRandomInitialForce)*speed);
         }
 
     }
-   void RestartGame()
+    private void FixedUpdate()
+    {
+        if (rigidBody2D.velocity.magnitude!=speed)
+        {
+            rigidBody2D.velocity = rigidBody2D.velocity.normalized * speed;
+        }
+    }
+    void RestartGame()
     {
         // Kembalikan bola ke posisi semula
         ResetBall();
